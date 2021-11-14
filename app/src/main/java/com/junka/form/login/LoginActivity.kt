@@ -1,11 +1,14 @@
 package com.junka.form.login
 
 
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.os.PersistableBundle
 import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.navigation.NavController
 import com.facebook.AccessToken
 import com.facebook.CallbackManager
@@ -21,6 +24,16 @@ import com.junka.form.main.MainActivity
 
 
 class LoginActivity : AppCompatActivity() {
+
+    companion object{
+        private val TAG = this::class.java.name
+
+        fun create(context : Context){
+            Intent(context,LoginActivity::class.java).run{
+                ContextCompat.startActivity(context, this, null)
+            }
+        }
+    }
 
     private lateinit var binding: ActivityLoginBinding
 
@@ -49,9 +62,9 @@ class LoginActivity : AppCompatActivity() {
         binding.loginButton.apply {
             setPermissions("email", "public_profile")
             registerCallback(fbCallbackManager, object : FacebookCallback<LoginResult> {
-                override fun onSuccess(loginResult: LoginResult) {
-                    Log.d(TAG, "facebook:onSuccess:$loginResult")
-                    handleFacebookAccessToken(loginResult.accessToken)
+                override fun onSuccess(result: LoginResult) {
+                    Log.d(TAG, "facebook:onSuccess:$result")
+                    handleFacebookAccessToken(result.accessToken)
                 }
 
                 override fun onCancel() {
@@ -94,7 +107,4 @@ class LoginActivity : AppCompatActivity() {
         Firebase.auth.signOut()
     }
 
-    companion object {
-        private val TAG = this::class.java.name
-    }
 }

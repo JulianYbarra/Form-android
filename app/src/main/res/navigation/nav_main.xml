@@ -6,5 +6,5 @@
 
     <fragment
         android:id="@+id/createUserFragment"
-        android:name="com.junka.form.user.CreateUserFragment" />
+        android:name="com.junka.form.customer.CreateCustomerFragment" />
 </navigation>

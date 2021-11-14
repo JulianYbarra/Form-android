@@ -8,5 +8,9 @@
     <string name="user_age">Edad</string>
     <string name="user_born">Fecha de nacimiento</string>
     <string name="save">Guardar</string>
+    <string name="create_customer">Creacion de Cliente</string>
+    <string name="field_cant_be_empty">El campo no puede ser vacio</string>
+    <string name="invalid_value">Valor no valido</string>
+    <string name="save_customer_succes">%1$s se guardo con exito</string>
 
 </resources>
