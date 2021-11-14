@@ -9,7 +9,6 @@ import com.junka.form.databinding.ActivityMainBinding
 
 class MainActivity: AppCompatActivity() {
 
-
     companion object{
         fun create(context : Context){
             Intent(context,MainActivity::class.java).run{

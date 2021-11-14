@@ -3,5 +3,10 @@
 
     <string name="facebook_app_id">324198282406008</string>
     <string name="fb_login_protocol_scheme">fb324198282406008</string>
+    <string name="user_name">Nombre</string>
+    <string name="user_last_name">Apellido</string>
+    <string name="user_age">Edad</string>
+    <string name="user_born">Fecha de nacimiento</string>
+    <string name="save">Guardar</string>
 
 </resources>
